@@ -12,17 +12,18 @@ Les principaux objectifs du projet incluent :
 - Améliorer la sécurité du réseau (gestion des identités, VPN, etc.).
 - Ajouter des fonctionnalités de redondance et de sauvegarde des données.
 L'infrastructure actuelle souffre de plusieurs limitations (manque de sécurité, absence de redondance, etc.), ce qui justifie le besoin de cette nouvelle infrastructure.
+
 # II. Introduction - Mise en contexte
 Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laboratoire virtuel hébergé sur Proxmox. Sur ce laboratoire ont été installées et configurées des machines virtuelles sous différents systèmes d'exploitation. 
 
 # III. Rôles de chaque membre
 ## Sprint 1
-- Product Owner : 
-- Scrum Master : 
+- Product Owner : Arnaud
+- Scrum Master : Damien
 - Développeuse : Marilyn
 ## Sprint 2
 - Product Owner : Marilyn
-- Scrum Master : 
-- Développeuse :
+- Scrum Master : Arnaud
+- Développeur : Damien
   
 
