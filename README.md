@@ -14,7 +14,7 @@ Les principaux objectifs du projet incluent :
 L'infrastructure actuelle souffre de plusieurs limitations (manque de sécurité, absence de redondance, etc.), ce qui justifie le besoin de cette nouvelle infrastructure.
 
 # II. Introduction - Mise en contexte
-Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laboratoire virtuel hébergé sur Proxmox. Sur ce laboratoire ont été installées et configurées des machines virtuelles sous différents systèmes d'exploitation. 
+Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laboratoire virtuel hébergé sur Proxmox. Sur ce laboratoire ont été installées et configurées des machines virtuelles et conteneur sous différents systèmes d'exploitation. 
 
 # III. Rôles de chaque membre
 ## Sprint 1
@@ -25,5 +25,14 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
 - Product Owner : Marilyn
 - Scrum Master : Arnaud
 - Développeur : Damien
+
+ # IV. Choix techniques
+
+ # V. Difficultés / Solutions
+
+ # VII. Conclusion
+
+ # VI. Suggestions d'amélioration
+
   
 
