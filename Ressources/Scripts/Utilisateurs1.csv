@@ -1,0 +1,58 @@
+Prenom;Nom;Societe;Site;Departement;Service;fonction;Manager-Prenom;Manager-Nom;Nom de PC;Marque PC;Date de naissance;Telephone fixe;Telephone portable;Télétravail
+Elif;Andersen;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Fiscalite;Conseiller_en_fiscalite;Liam;Rodriguez;PA31320;LENOVO;22/08/1982__;05 34 56 78 90;-;Non
+Arnaud;Aubry;MadTech;;DSI;Exploitation;Technicien d'exploitation;;;;;;;;
+Salma;Bianchi;EcoTechSolutions;Bordeaux;DRH;Responsable_recrutement;Responsable recrutement;Emir;Rizzo;PA20618;HP;10/05/1992__;05 10 98 76 54;07 84 10 57 38;Non
+Tara;Costa;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;;Comptable;;;;;;;;
+Tina;Demir;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Gestionnaire ADV;Amir;Gómez;PA64810;DELL;16/11/1984__;05 87 65 43 21;06 21 67 38 96;Non
+Hugo;Dimitrov;EcoTechSolutions;Bordeaux;Developpement;;Directeur Developpement;Emir;Rizzo;PA93655;TOSHIBA;21/09/1998__;05 12 34 56 78;07 30 41 39 31;Non
+Cleo;Dupont;EcoTechSolutions;Bordeaux;Communication;Communication_interne;Community manager;Wassim;Ibrahimovic;PA19149;DELL;14/05/1989__;05 56 78 90 12;07 36 67 22 09;Non
+Aria;Ekström;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Gestionnaire ADV;Amir;Gómez;PA46917;DELL;02/09/1990__;05 40 98 76 54;07 39 06 34 77;Non
+Zara;Fernandez;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;-;-;-;-;-;-
+Alexis;Fischer;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Finance;Controleur de gestion;Liam;Rodriguez;PA57512;HP;28/11/1986__;05 45 67 89 01;-;Non
+Damien;Galais-Cohen;MadTech;;DSI;Exploitation;Technicien d'exploitation;;;;;;;;
+Boris;Garcia;EcoTechSolutions;Bordeaux;Communication;Communication_interne;Community manager;Wassim;Ibrahimovic;PA11094;DELL;01/01/1991__;05 76 54 32 10;07 10 63 05 03;Non
+Amir;Gómez;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Responsable ADV;Lana;Wong;PA16564;DELL;16/07/1988__;05 12 34 56 78;06 97 33 62 93;Non
+Gita;Hassania;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;Wong;PA82880;DELL;18/08/1991__;05 34 56 78 90;06 55 93 98 08;Non
+Val;Hernandez;EcoTechSolutions;Bordeaux;Service_commercial;Service_client;Agent;Enzo;Morin;PA39395;DELL;25/01/1985__;05 45 67 89 01;-;Non
+Petra;Hoàng;EcoTechSolutions;Bordeaux;Developpement;Developpement;Developpeur;Hugo;Dimitrov;PA33002;TOSHIBA;17/05/1991__;05 87 65 43 21;07 49 53 46 24;Non
+Wassim;Ibrahimovic;EcoTechSolutions;Bordeaux;Communication;;Directrice Communication_et_Relations_publiques;Emir;Rizzo;PA68385;DELL;14/11/1994__;05 67 89 01 23;06 28 75 29 57;Non
+Carmen;Ivanov;EcoTechSolutions;Bordeaux;Developpement;Analyse_et_conception;Developpeur;Hugo;Dimitrov;PA90613;HP;12/10/1993__;-;-;Non
+Marilyn;Jacques-Sebastien;MadTech;;DSI;Exploitation;Technicien d'exploitation;;;;;;;;
+David;Johansson;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Gestionnaire ADV;Amir;Gómez;PA16353;DELL;19/11/2001__;05 12 34 56 78;07 63 23 66 59;Non
+Gôrreck;Khan;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;Wong;PA90176;DELL;23/02/1987__;05 10 98 76 54;07 99 41 35 99;Non
+Dario;Kim;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Finance;Analyste financier;Liam;Rodriguez;PA34551;TOSHIBA;21/10/1992__;05 32 10 98 76;-;Non
+Farah;Kowalski;EcoTechSolutions;Bordeaux;Communication;Relation_medias;Chargee relation_presse;Wassim;Ibrahimovic;PA99009;DELL;16/11/1994__;05 87 65 43 21;06 43 56 70 57;Non
+Sasha;Kumar;EcoTechSolutions;Bordeaux;Service_commercial;Service_client;Agent;Enzo;Morin;PA79817;DELL;23/09/1994__;05 87 65 43 21;-;Non
+Marwan;Leclerc;EcoTechSolutions;Bordeaux;DSI;Exploitation;Technicien d'exploitation;Yara;Tsai;PA21577;DELL;02/08/1995__;05 76 54 32 10;06 87 34 03 10;Non
+Jana;Liu;EcoTechSolutions;Bordeaux;DRH;Agent_RH;Agent RH;Salma;Bianchi;PA31784;HP;09/08/1983__;05 34 56 78 90;-;Non
+Mia;Lopez;EcoTechSolutions;Bordeaux;Developpement;Developpement;Developpeur;Hugo;Dimitrov;PA69037;HP;01/06/1993__;-;-;Non
+Rami;Meier;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;Wong;PA44614;DELL;16/12/1982__;05 10 98 76 54;07 03 43 28 99;Non
+Enzo;Morin;EcoTechSolutions;Bordeaux;Service_commercial;Service_achat;Responsable achat;Lana;Wong;PA19149;DELL;26/08/1988__;05 56 78 90 12;06 96 22 88 44;Non
+Diego;Müller;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;-;-;-;05 12 34 56 78;06 19 08 76 02;-
+Felix;Nguyen;EcoTechSolutions;Bordeaux;Communication;Communication_interne;Charge en droit de la communication;Wassim;Ibrahimovic;PA88356;DELL;03/11/1982__;05 12 34 56 78;07 47 07 04 20;Non
+Marco;Nikolić;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Gestionnaire ADV;Amir;Gómez;PA37602;DELL;10/11/1987__;05 76 54 32 10;06 06 72 28 98;Non
+Aya;Orozco;EcoTechSolutions;Bordeaux;Service_commercial;Service_achat;Acheteur;Enzo;Morin;PA59874;DELL;30/03/1991__;05 40 98 76 54;06 90 73 02 13;Non
+Nikos;Papadopoulos;EcoTechSolutions;Bordeaux;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;PA83940;LENOVO;23/12/1986__;05 76 54 32 10;06 28 63 18 38;Non
+Teo;Patel;EcoTechSolutions;Bordeaux;Developpement;Developpement;Developpeur;Hugo;Dimitrov;PA48530;LENOVO;25/12/1993__;-;-;Non
+Mila;Pereira;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Comptabilite;Comptable;Liam;Rodriguez;PA30790;HP;14/08/1987__;05 34 56 78 90;-;Non
+Lia;Prado;EcoTechSolutions;Bordeaux;Developpement;Recherche_et_prototype;Developpeur;Hugo;Dimitrov;PA27339;HP;11/03/1992__;05 10 98 76 54;07 04 20 97 14;Non
+Aisha;Rahman;EcoTechSolutions;Bordeaux;Developpement;Analyse_et_conception;Developpeur;Hugo;Dimitrov;PA41987;HP;26/08/1987__;-;-;Non
+Noa;Ramos;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;-;-;-;-;-;-
+Emir;Rizzo;EcoTechSolutions;Bordeaux;Direction;CEO;CEO;-;;PA12959;TOSHIBA;09/05/1985__;05 87 65 43 21;06 53 79 17 41;Non
+Liam;Rodriguez;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Finance;Directeur financier;Emir;Rizzo;PA68867;HP;18/10/1992;05 45 67 89 01;06 48 46 26 40;Non
+Oscar;Rossi;EcoTechSolutions;Bordeaux;Communication;Communication_interne;Charge de communication;Wassim;Ibrahimovic;PA10218;;17/06/1993__;05 10 98 76 54;07 07 56 11 74;Non
+Kai;Sato;EcoTechSolutions;Bordeaux;DRH;Agent_RH;Agent RH;Salma;Bianchi;PA66766;HP;31/07/1986__;05 45 67 89 01;-;Non
+Nina;Schaefer;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;Wong;PA12427;DELL;01/02/1992__;05 10 98 76 54;06 62 15 23 12;Non
+Ivan;Schmidt;Studio_Dlight;Nantes;Communication;Relation_medias;Monteur;Wassim;Ibrahimovic;-;-;-;-;06 84 21 30 48;-
+Amara;Silva;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Finance;Controleur de gestion;Liam;Rodriguez;PA12959;TOSHIBA;05/05/1995__;05 45 67 89 01;-;Non
+Rayan;Sousa;EcoTechSolutions;Bordeaux;Communication;Relation_medias;Chargee relation presse;Wassim;Ibrahimovic;PA76764;DELL;10/08/1988__;05 34 56 78 90;07 32 83 61 75;Non
+Maria;Subramanian;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;-;-;-;-;-;-
+Leo;Tanaka;EcoTechSolutions;Bordeaux;Direction;Assistant_de_direction;Assistant de direction;Emir;Rizzo;PA75792;TOSHIBA;12/12/1998__;05 32 10 98 76;07 57 17 24 38;Non
+Ahmed;Torres;EcoTechSolutions;Bordeaux;Developpement;Recherche_et_prototype;Developpeur;Hugo;Dimitrov;PA82471;HP;17/11/1993__;05 40 98 76 54;06 53 17 82 44;Non
+Yara;Tsai;EcoTechSolutions;Bordeaux;DSI;;Responsable SI;Emir;Rizzo;PA85785;DELL;31/10/1990__;05 32 10 98 76;06 63 07 38 94;Non
+Daan;Varela;EcoTechSolutions;Bordeaux;Service_commercial;Service_achat;Acheteur;Enzo;Morin;PA16013;DELL;29/04/1999__;05 56 78 90 12;06 54 60 60 27;Non
+Paolo;Weber;EcoTechSolutions;Bordeaux;Communication;Relation_medias;Redacteur;Wassim;Ibrahimovic;PA92969;DELL;17/11/1992__;05 32 10 98 76;06 55 60 51 21;Non
+Lana;Wong;EcoTechSolutions;Bordeaux;Service_commercial;;Directeur commercial;Emir;Rizzo;PA90233;TOSHIBA;12/05/1997;05 34 56 78 90;07 34 44 27 21;Non
+Iker;Yilmaz;EcoTechSolutions;Bordeaux;Finance_et_comptabilite;Comptabilite;Comptable;Liam;Rodriguez;PA68447;LENOVO;11/06/1998__;05 76 54 32 10;-;Non
+Mateo;Zhang;EcoTechSolutions;Bordeaux;DSI;Exploitation;Technicien d'exploitation;Yara;Tsai;PA76820;DELL;20/10/2001__;05 12 34 56 78;06 73 12 44 37;Non
+Luka;Zimmermann;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;Dimitrov;-;-;-;-;-;-
