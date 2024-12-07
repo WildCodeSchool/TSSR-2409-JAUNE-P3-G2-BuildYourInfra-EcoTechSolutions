@@ -25,6 +25,10 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
 - Product Owner : Marilyn
 - Scrum Master : Arnaud
 - Développeur : Damien
+## Sprint 3
+- Product Owner : Damien
+- Scrum Master : Marilyn
+- Développeur : Arnaud
 
  # IV. Choix techniques
 
