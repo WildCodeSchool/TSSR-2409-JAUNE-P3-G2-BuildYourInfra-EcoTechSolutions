@@ -196,3 +196,99 @@
 
 ---
 
+# Configuration de Debian 12 en tant que membre d'un Active Directory
+
+## Étapes de configuration
+
+### 1. Mettre à jour le système
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+### 2. Installer les paquets nécessaires
+
+```bash
+sudo apt install -y realmd sssd sssd-tools adcli samba-common krb5-user packagekit
+```
+
+Lors de l'installation de `krb5-user`, il vous sera demandé de configurer le domaine Kerberos. Entrez le nom de votre domaine Active Directory en majuscules (par exemple : `ECOTECHSOLUTIONS.LAN`).
+
+### 3. Découverte du domaine Active Directory
+
+Vérifiez que le domaine est accessible :
+
+```bash
+realm discover ecotechSolutions.lan
+```
+
+Remplacez `ecotechSolutions.lan` par le nom de votre domaine. Vous devriez voir des informations sur le domaine si tout est correctement configuré.
+
+### 4. Joindre la machine au domaine
+
+Pour joindre la machine au domaine :
+
+```bash
+sudo realm join --user=admin@ecotechSolutions.lan ecotechSolutions.lan
+```
+
+Remplacez `admin@ecotechSolutions.lan` par un compte utilisateur ayant les droits nécessaires pour ajouter une machine au domaine. Vous serez invité à entrer le mot de passe de cet utilisateur.
+
+### 5. Vérifier l'intégration
+
+Une fois que la commande est terminée, vérifiez que la machine est bien membre du domaine :
+
+```bash
+realm list
+```
+
+Le domaine devrait apparaître dans la liste avec des informations comme les paramètres d'intégration et de connexion.
+
+### 6. Configurer SSSD
+
+Éditez le fichier de configuration SSSD :
+
+```bash
+sudo nano /etc/sssd/sssd.conf
+```
+Configuration :
+
+```
+[sssd]
+domains = ecotechSolutions.lan
+config_file_version = 2
+services = nss, pam
+
+[domain/ecotechSolutions.lan]
+ad_domain = ecotechSolutions.lan
+krb5_realm = ECOTECHSOLUTIONS.LAN
+realmd_tags = manages-system joined-with-samba
+id_provider = ad
+access_provider = ad
+fallback_homedir = /home/%u
+default_shell = /bin/bash
+ldap_id_mapping = true
+```
+
+Assurez-vous que les permissions sur le fichier sont correctes :
+
+```bash
+sudo chmod 600 /etc/sssd/sssd.conf
+```
+
+Redémarrez SSSD :
+
+```bash
+sudo systemctl restart sssd
+```
+
+### 8. Tester la connexion
+
+Essayez de vous connecter avec un utilisateur du domaine :
+
+```bash
+su - username@ecotechSolutions.lan
+```
+
+Remplacez `username@ecotechSolutions.lan` par le compte d'un utilisateur du domaine. Si tout est configuré correctement, l'utilisateur devrait être en mesure de se connecter.
+
