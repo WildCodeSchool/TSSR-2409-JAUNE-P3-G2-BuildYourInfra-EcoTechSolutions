@@ -292,3 +292,70 @@ su - username@ecotechSolutions.lan
 
 Remplacez `username@ecotechSolutions.lan` par le compte d'un utilisateur du domaine. Si tout est configuré correctement, l'utilisateur devrait être en mesure de se connecter.
 
+
+# Configuration de Windows Server Core 2022 en tant que contrôleur de domaine secondaire
+
+## Étapes de configuration
+
+### 1. Configurer les paramètres réseau
+
+Utilisez `sconfig` pour configurer les paramètres réseau de base :
+
+1. Lancez l'outil de configuration en exécutant :
+   ```cmd
+   sconfig
+   ```
+2. Configurez :
+   - Nom de la machine (option 2).
+   - Paramètres IP statiques (option 8).
+   - Configuration DNS pour pointer vers le contrôleur de domaine principal.
+
+
+### 2. Joindre le serveur au domaine
+
+Joignez le serveur au domaine Active Directory :
+
+1. Exécutez la commande suivante :
+   ```cmd
+   Add-Computer -DomainName ecotechSolutions.lan -Credential ecotechSolutions\\admin
+   ```
+   Remplacez `ecotechSolutions\\admin` par un compte utilisateur avec des droits suffisants.
+
+2. Redémarrez le serveur après avoir joint le domaine :
+   ```cmd
+   Restart-Computer
+   ```
+
+### 3. Installer les rôles nécessaires
+
+Installez les rôles et fonctionnalités requis pour un contrôleur de domaine secondaire :
+
+```powershell
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+```
+
+### 4. Promouvoir le serveur en tant que contrôleur de domaine
+
+Configurez le serveur pour qu'il devienne un contrôleur de domaine secondaire :
+
+1. Exécutez la commande suivante :
+   ```powershell
+   Install-ADDSDomainController -DomainName "ecotechSolutions.lan" -InstallDns -Credential (Get-Credential)
+   ```
+2. Fournissez les informations d'identification d'un utilisateur ayant des permissions administratives dans Active Directory.
+
+3. Le serveur sera automatiquement redémarré après l'installation.
+
+### 5. Vérifier la configuration
+
+Après le redémarrage, vérifiez que le serveur est correctement configuré comme contrôleur de domaine secondaire :
+
+1. Vérifiez la réplication Active Directory :
+   ```powershell
+   Repadmin /replsummary
+   ```
+
+2. Vérifiez l'état du service Active Directory :
+   ```powershell
+   Get-Service NTDS
+   ```
