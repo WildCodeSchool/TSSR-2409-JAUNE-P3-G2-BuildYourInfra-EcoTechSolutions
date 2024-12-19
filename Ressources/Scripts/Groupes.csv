@@ -1,4 +1,4 @@
-﻿Name;Descritpion;Path;Scope;Category
+﻿Name;Description;Path;Scope;Category
 Grp_Ecotech_Communication_GG;Groupe Département Communication;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
 Grp_Ecotech_Developpement_GG;Groupe Département  Developpement;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
 Grp_Ecotech_Direction_GG;Groupe Département  Direction;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
