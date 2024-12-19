@@ -5,7 +5,8 @@
 Commencer par télécharger les sources d'installation sur le site de Microsoft en suivant cette adresse, [Téléchargement de LAPS](https://www.microsoft.com/en-us/download/details.aspx?id=46899). Attention à prendre la version **LAPS.x64.msi**.
 
 Une fois les sources télécharger, lancer l'installation et sélectionner comme suit les fonctionnalités à installer.
-![[cours-installation-laps-04 1.jpg]]
+
+/!\ IMAGE À AJOUTER /!\
 
 ## 2. Mise à jour du schéma AD
 
@@ -49,7 +50,7 @@ Pour initialiser le Magasin Central, il faut commencer par copier les répertoir
 
 Copier le répertoire et l'intégralité de ses fichiers `.ADMX` et `.ADML` :
 ```Powershell
-Copy-Item -Path "C:\PolicyDefinitions" -Destination "C:\Windows\SYSVOL\sysvol\ecotechsolutions.lan\Policies" -Recurse -Force
+Copy-Item -Path "C:\Windows\PolicyDefinitions" -Destination "C:\Windows\SYSVOL\sysvol\ecotechsolutions.lan\Policies" -Recurse -Force
 ```
 
 ## 6. Création de la GPO de gestion de mot de passe LAPS
@@ -66,7 +67,7 @@ Supprimer le groupe **Authenticated Users** et ajouter le groupe **Domain Comput
 
 Modifier le statut de la GPO en cochant **User Configuration Settings Disabled** puis lier la GPO à l'OU **Ecotech_Computers**.
 
-## 7. Déploiement de LAP par GPO
+## 7. Déploiement de LAPS par GPO
 
 Dans la console **Group Policy Management**, créer une GPO nommée `GPO_Ecotech_C_LAPS-Dpl_GG`. 
 
