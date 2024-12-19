@@ -1,0 +1,24 @@
+﻿Name;Descritpion;Path;Scope;Category
+Grp_Ecotech_Communication_GG;Groupe Département Communication;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Developpement_GG;Groupe Département  Developpement;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Direction_GG;Groupe Département  Direction;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_DRH_GG;Groupe Département  Direction des Ressources Humaines;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_DSI_GG;Groupe Département  Direction des Services Informatique;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Finance_GG;Groupe Département  Finance et Comptabilités;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Commercial_GG;Groupe Département  Service Commercial;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Communication_Interne_GG;Groupe Service Communication Interne;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Communication_Media_GG;Groupe Service Relation Médias;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Developpement_Analyse_GG;Groupe Service Analyse et Conception;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Developpement_Dev_GG;Groupe Service Développement;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Developpement_Recherche_GG;Groupe Service Recherche et Prototype;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Developpement_Qualite_GG;Groupe Service Test et Qualité;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_DSI_Exploitation_GG;Groupe Service Exploitation;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_DSI_Presta_GG;Groupe Service Prestataire;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Finance_Finance_GG;Groupe Service Finance;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Finance_Fiscalite_GG;Groupe Service Fiscalité;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Finance_Comptabilite_GG;Groupe Service Comptabilité;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Commercial_ADV_GG;Groupe Service ADV;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Commercial_B2B_GG;Groupe Service  B2B;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+Grp_Ecotech_Commercial_Achat_GG;Groupe Service Achat;"OU=Ecotech_security;DC=ecotechsolutions;DC=lan";Global;Security
+
+
