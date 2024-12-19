@@ -59,8 +59,8 @@ Dans la console **Group Policy Management**, créer une GPO nommée `GPO_Ecotech
 
 Dans la GPO aller configurer **Computer Configuration** > **Administrative Template** > **LAPS** 
 
-**Password Settings** > **Enabled** > **Password Length 32**
-**Do not allow password exipration...** > **Enabled**
+**Password Settings** > **Enabled** > **Password Length 32** \
+**Do not allow password exipration...** > **Enabled** \
 **Enable local  admin password...** > **Enabled**
 
 Supprimer le groupe **Authenticated Users** et ajouter le groupe **Domain Computers**. 
