@@ -52,7 +52,7 @@ Copier le répertoire et l'intégralité de ses fichiers `.ADMX` et `.ADML` :
 ```Powershell
 Copy-Item -Path "C:\Windows\PolicyDefinitions" -Destination "C:\Windows\SYSVOL\sysvol\ecotechsolutions.lan\Policies" -Recurse -Force
 ```
-![](../Ressources/Scripts/Images/LAPS_Install.jpg)
+
 ## 6. Création de la GPO de gestion de mot de passe LAPS
 
 Dans la console **Group Policy Management**, créer une GPO nommée `GPO_Ecotech_C_LAPS-Conf_GG`. 
