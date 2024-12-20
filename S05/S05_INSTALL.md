@@ -10,7 +10,7 @@ Une fois les sources télécharger, lancer l'installation et sélectionner comme
 
 ## 2. Mise à jour du schéma AD
 
-Sur le **Contrôleur de Domaine** avec le rôle **FSMO Maitre RID**, suivez la procédure comme expliquée ci-après.
+Sur le **Contrôleur de Domaine** avec le rôle **FSMO Maitre de schéma**, suivez la procédure comme expliquée ci-après.
 
 Exécutez la commande suivante pour importer le module PowerShell de LAPS :
 ```Powershell
