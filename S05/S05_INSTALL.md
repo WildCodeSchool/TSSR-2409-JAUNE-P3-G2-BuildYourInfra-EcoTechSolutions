@@ -52,7 +52,7 @@ Copier le répertoire et l'intégralité de ses fichiers `.ADMX` et `.ADML` :
 ```Powershell
 Copy-Item -Path "C:\Windows\PolicyDefinitions" -Destination "C:\Windows\SYSVOL\sysvol\ecotechsolutions.lan\Policies" -Recurse -Force
 ```
-
+![](../Ressources/Scripts/Images/LAPS_Install.jpg)
 ## 6. Création de la GPO de gestion de mot de passe LAPS
 
 Dans la console **Group Policy Management**, créer une GPO nommée `GPO_Ecotech_C_LAPS-Conf_GG`. 
@@ -82,3 +82,49 @@ Supprimer le groupe **Authenticated Users** et ajouter le groupe **Domain Comput
 
 Modifier le statut de la GPO en cochant **User Configuration Settings Disabled** puis lier la GPO à l'OU **Ecotech_Computers**.
 
+
+
+# Configuration d'un RAID 1 sur Windows Server 2022
+![](../Ressources/Scripts/Images/RAIDl.jpg.jpg)
+## Prérequis
+- **Disques** : Deux disques de 50 Go pour le RAID 1 et un disque de 32 Go indépendant.
+- **Accès administrateur** : Nécessaire pour effectuer la configuration.
+
+---
+
+## Étape 1 : Accéder à Gestion des disques
+
+1. **Ouvrir Gestion des disques sans raccourcis :**
+   - Cliquez sur **Start** et tapez `Server Manager`, puis ouvrez-le.
+   - Dans le **Server Manager**, allez dans **Tools > Computer Management**.
+   - Dans **Computer Management**, sélectionnez **Storage > Disk Management**.
+
+---
+
+## Étape 2 : Préparer les disques
+
+1. **Vérifiez les disques disponibles :**
+   - `Disk 0` : 32 Go, restera indépendant.
+   - `Disk 1` et `Disk 2` : 50 Go chacun, pour le RAID 1.
+
+2. **Initialisez les disques de 50 Go :**
+   - Si les disques de 50 Go sont marqués comme *Not Initialized* :
+     - Faites un clic droit sur chaque disque > **Initialize Disk**.
+     - Sélectionnez **GPT (GUID Partition Table)**.
+
+---
+
+## Étape 3 : Créer le RAID 1 
+
+### Via Gestion des disques
+1. **Créer un volume miroir :**
+   - Faites un clic droit sur `Disk 1` > **New Mirrored Volume**.
+   - Sélectionnez `Disk 2` comme second disque pour le miroir.
+
+2. **Configurer le volume :**
+   - Attribuez une lettre de lecteur (ex. `D:`).
+   - Formatez le volume avec **NTFS**.
+   - Terminez l’assistant.
+
+3. **Vérifiez le RAID :**
+   - Les deux disques apparaîtront comme un seul volume miroir dans **Disk Management**.
