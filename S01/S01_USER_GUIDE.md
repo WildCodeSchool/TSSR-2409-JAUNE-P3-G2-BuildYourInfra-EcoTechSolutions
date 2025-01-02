@@ -2,4 +2,4 @@
 ## Schéma réseau
 ![Schéma réseau](Ressources/Images/nomen.png)
 ## Nomenclature
-![Nomenclature](Ressources/Images/nomen.png)
+![Nomenclature](Ressources/Images/nomenclature.drawio.png)
