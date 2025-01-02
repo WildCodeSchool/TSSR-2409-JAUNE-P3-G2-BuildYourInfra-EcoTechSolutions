@@ -85,7 +85,7 @@ Modifier le statut de la GPO en cochant **User Configuration Settings Disabled**
 
 
 # Configuration d'un RAID 1 sur Windows Server 2022
-![](../Ressources/Scripts/Images/RAID1.jpg.jpg)
+
 ## Prérequis
 - **Disques** : Deux disques de 50 Go pour le RAID 1 et un disque de 32 Go indépendant.
 - **Accès administrateur** : Nécessaire pour effectuer la configuration.
