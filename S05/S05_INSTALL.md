@@ -6,7 +6,7 @@ Commencer par télécharger les sources d'installation sur le site de Microsoft 
 
 Une fois les sources télécharger, lancer l'installation et sélectionner comme suit les fonctionnalités à installer.
 
-![](../Ressources/Scripts/Images/LAPS_Install.jpg)
+![](../Ressources/Images/Install_LAPS.jpg)
 
 ## 2. Mise à jour du schéma AD
 
