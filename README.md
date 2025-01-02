@@ -40,6 +40,7 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
 ## Sprint 6
 - Product Owner : Marilyn
 - Scrum Master : Damien
+- Développeur : Arnaud
   
  # IV. Choix techniques
 
