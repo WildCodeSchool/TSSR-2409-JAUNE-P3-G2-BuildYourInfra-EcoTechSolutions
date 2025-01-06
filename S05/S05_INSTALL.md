@@ -128,3 +128,33 @@ Modifier le statut de la GPO en cochant **User Configuration Settings Disabled**
 
 3. **Vérifiez le RAID :**
    - Les deux disques apparaîtront comme un seul volume miroir dans **Disk Management**.
+
+
+# Serveur de Stockage
+### Installation et Configuration d'un serveur de stockage windows serveur 2022 GUI
+
+**NYCTALOPE**
+* Template : `Windows-server-2022` / Type : `VM`.
+* Configuration IP : `10.10.255.5/24` / Passerelle : `10.10.255.254` / Carte réseau : `vmbr555`.
+* Hard Disk : `1 HDD 32GO` +`1 HDD 50GO` (Système + Dossiers Partagés) 
+* Processeur : `2`.
+* RAM : `4Go`.
+* Fonction : `STOCKAGE`.
+
+### Création dossiers partagés par script et GPO
+Nous avons décidé de créer les dossiers partagés des départements et des services par un script
+[`Creation_directories.ps1`](../Ressources/Scripts/Creation_directories.ps1)
+et les dossiers personnels par GPO
+[`GPO_Ecotech_U_Automatique_dossier_perso_utilisateur_V1`](../Ressources/fichiers/GPO_Ecotech_U_Automatique_dossier_perso_utilisateur_V1.md), Avec mappage lecteur `I`
+
+### Sécurité de partage des dossiers par groupe AD
+La sécurisation des dossiers partagé a été faite manuellement
+
+
+### Créations de GPO pour mappage dossier de service et département
+1. Un **dossier de département**, avec une lettre de mappage **K**, accessible par tous les utilisateurs d'un même département.
+- `GPO_Ecotech_U_Mappage_Departement_V1`
+2. Un **dossier de service**, avec une lettre de mappage réseau **J**, accessible par tous les utilisateurs d'un même service.
+-  `GPO_Ecotech_U_Mappage_service_V1`\
+   [Gpo Mappage](../Ressources/fichiers/GPO_Mappage_Departements_et_Services.md)
+
