@@ -16,27 +16,32 @@ L'infrastructure actuelle souffre de plusieurs limitations (manque de sécurité
 # II. Introduction - Mise en contexte
 Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laboratoire virtuel hébergé sur Proxmox. Sur ce laboratoire ont été installées et configurées des machines virtuelles et conteneur sous différents systèmes d'exploitation. 
 
-# III. Rôles de chaque membre
+# III. Rôles de chaque membre / objectifs
 ## Sprint 1
 - Product Owner : Arnaud
 - Scrum Master : Damien
 - Développeuse : Marilyn
+ ![Objectifs](Ressources/Images/Objectifs/Objectifs_S1.png)
 ## Sprint 2
 - Product Owner : Marilyn
 - Scrum Master : Arnaud
 - Développeur : Damien
+   ![Objectifs](Ressources/Images/Objectifs/Objectifs_S2.png)
 ## Sprint 3
 - Product Owner : Damien
 - Scrum Master : Marilyn
 - Développeur : Arnaud
+  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S3.png) 
 ## Sprint 4
 - Product Owner : Arnaud
 - Scrum Master : Damien
 - Développeuse : Marilyn
+   ![Objectifs](Ressources/Images/Objectifs/Objectifs_S4.png)
 ## Sprint 5
 - Product Owner : Marilyn
 - Scrum Master : Arnaud
 - Développeur : Damien
+  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S5.png)
 ## Sprint 6
 - Product Owner : Marilyn
 - Scrum Master : Damien
