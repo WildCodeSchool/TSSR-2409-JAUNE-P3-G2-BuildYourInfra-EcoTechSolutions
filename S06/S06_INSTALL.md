@@ -34,7 +34,7 @@
 #### Désactivation des comptes AD
 - Pour la désactivation des employés sortant nous avons d'abord créer un OU `Ecotech_A_Supprimer`, pour centraliser les utilisateurs.
 - Pour traiter la désactivation et le déplacement dans cette OU nous passons par un script et un fichier csv \
-[USER_Désactivation_Ecotechsolution.ps1]`(../Ressources/Scripts/USER_Désactivation_Ecotechsolution.ps1)\
+[USER_Désactivation_Ecotechsolution.ps1](../Ressources/Scripts/USER_Desactivation_Ecotechsolution.ps1)\
 [Liste_Employes_Sortant.csv](../Ressources/Scripts/Liste_Employes_Sortant.csv)
 - l'OU `Ecotech_A_Supprimer` sera vidée une fois par mois via un script(en cours de réalisation), les dossiers personnels seront aussi supprimés.
 
