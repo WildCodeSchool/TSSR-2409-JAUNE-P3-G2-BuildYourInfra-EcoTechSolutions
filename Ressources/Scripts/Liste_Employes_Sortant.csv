@@ -1,0 +1,14 @@
+Prenom;Nom;Societe;Site;Departement;Service;fonction;Manager-Prenom;Manager-Nom;Nom de PC;Marque PC;Date de naissance;Telephone fixe;Telephone portable;Télétravail
+Aria;Ekström;EcoTechSolutions;Bordeaux;Service_commercial;ADV;Gestionnaire ADV;Amir;agómez;PA46917;DELL;02/09/1990__;05 40 98 76 54;07 39 06 34 77;Non
+Carmen;Ivanov;EcoTechSolutions;Bordeaux;Developpement;Analyse_et_conception;Developpeur;Hugo;hdimitrov;PA90613;HP;12/10/1993__;-;-;Non
+Gôrreck;Khan;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;lwong;PA90176;DELL;23/02/1987__;05 10 98 76 54;07 99 41 35 99;Non
+Farah;Kowalski;EcoTechSolutions;Bordeaux;Communication;Relation_medias;Chargee relation_presse;Wassim;wibrahimovic;PA99009;DELL;16/11/1994__;05 87 65 43 21;06 43 56 70 57;Non
+Jana;Liu;EcoTechSolutions;Bordeaux;DRH;Agent_RH;Agent RH;Salma;sbianchi;PA31784;HP;09/08/1983__;05 34 56 78 90;-;Non
+Mia;Lopez;EcoTechSolutions;Bordeaux;Developpement;Developpement;Developpeur;Hugo;hdimitrov;PA69037;HP;01/06/1993__;-;-;Non
+Rami;Meier;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;lwong;PA44614;DELL;16/12/1982__;05 10 98 76 54;07 03 43 28 99;Non
+Teo;Patel;EcoTechSolutions;Bordeaux;Developpement;Developpement;Developpeur;Hugo;hdimitrov;PA48530;LENOVO;25/12/1993__;-;-;Non
+Aisha;Rahman;EcoTechSolutions;Bordeaux;Developpement;Analyse_et_conception;Developpeur;Hugo;hdimitrov;PA41987;HP;26/08/1987__;-;-;Non
+Nina;Schaefer;EcoTechSolutions;Bordeaux;Service_commercial;B2B;commercial;Lana;lwong;PA12427;DELL;01/02/1992__;05 10 98 76 54;06 62 15 23 12;Non
+Maria;Subramanian;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;hdimitrov;-;-;-;-;-;-
+Lana;Wong;EcoTechSolutions;Bordeaux;Service_commercial;;Directeur commercial;Emir;erizzo;PA90233;TOSHIBA;12/05/1997;05 34 56 78 90;07 34 44 27 21;Non
+Luka;Zimmermann;UBIHard;Paris;Developpement;Test_et_qualite;Developpeur;Hugo;hdimitrov;-;-;-;-;-;-
