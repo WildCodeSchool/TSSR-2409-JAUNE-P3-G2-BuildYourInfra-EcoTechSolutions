@@ -178,4 +178,41 @@ Voici à quoi ressemble le tableau de bord initial de la nouvelle version de Zab
 
 ![](https://www.initmax.com/wp-content/uploads/2024/12/zabbix72dashboard.png)
 
+---
+
+# Installation et Configuration de Zabbix-agent2 sur Linux
+
+## Installation
+
+Vous pouvez installer le Zabbix-agent2 avec la commande suivante :
+
+```bash
+apt install zabbix-agent2
+```
+
+## Configuration de l'agent
+
+Pour faire fonctionner l'agent, vous devez configurer certains paramètres de base.
+
+Pour cela, ouvrez le fichier `zabbix_agent2.conf` avec votre éditeur de texte préféré :
+
+```bash
+nano /etc/zabbix/zabbix_agent2.conf
+```
+
+Ajustez les propriétés suivantes :
+
+```plaintext
+Server=<Indiquez ici le nom d'hôte de votre serveur ZABBIX>
+ServerActive=<Indiquez ici le nom d'hôte de votre serveur ZABBIX>
+Hostname=<Indiquez ici le nom d'hôte de votre serveur ACTUEL>
+```
+
+## Redémarrer Zabbix-agent2
+
+Pour appliquer vos paramètres, redémarrez le Zabbix-agent2 avec la commande suivante :
+
+```bash
+systemctl restart zabbix-agent2
+```
 
