@@ -1,62 +1,181 @@
 # SPRINT 6 INSTALL
 
-## Mise à jour de l'AD
 
-### Le département "Finance et Comptabilité" change de nom et s'appelle désormais  "Direction financière".
-- Cette partie là a été traitée manuellement.
-#### Renommer l'OU "Finance et Comptabilite".
-- Selectioner l'OU "Finance et Comptabilite" et faire clic droit, puis `Rename`.\
-![Image](../Ressources/Images/AD/Rename_OU1.png)
-- Renommer l'OU "Direction financiere".\
-![Image](../Ressources/Images/AD/Rename_OU2.png)
+# Installation des Dépendances
 
-### Dans ce département, le service "Fiscalité" disparaît, et les collaborateurs intègrent le service "Finance".
-- Cette partie là a été traitée manuellement.
+```bash
+apt install sudo gpg curl wget
+```
 
-#### Déplacer Compte Utilisateur.
-- Sélectioner l'utilisateur et faire clic droit, puis `Move`.\
-![Image](../Ressources/Images/AD/Move_User1.png)
-- Sélectionner l'OU où l'utilisateur doit être déplacé, puis OK.  \
-![Image](../Ressources/Images/AD/Move_User2.png)
+# Installation de PostgreSQL
 
-#### Déplacer l'OU"Fiscalité" dans l'OU "Ecotech_A_Supprimer".
-- Sélectioner l'OU "Fiscalité" et faire clic droit, puis `Move`.\
-![Image](../Ressources/Images/AD/Move_OU1.png)
-- Sélectionner l'OU "Ecotech_A_Supprimer" où il doit être déplacé, puis OK.  \
-![Image](../Ressources/Images/AD/Move_OU2.png)
+Dans un premier temps, nous allons installer les dépôts PostgreSQL et désactiver les dépôts PostgreSQL système par défaut. Lorsque le message suivant apparaît :
+**« Ce script activera le dépôt APT PostgreSQL sur apt.postgresql.org sur votre système. Le nom de code de la distribution utilisé sera bookworm-pgdg. »**
+appuyez sur **Entrée** pour continuer et confirmer l'installation depuis le dépôt officiel.
 
-### Intégration des nouveaux utilisateurs.
-- Nous avons utilisé un script avec un fichier CSV, les nouveaux entrants ont été intégrés à l'AD. \
-[USER_Creation_Ecotechsolution.ps1](../Ressources/Scripts/USER_Creation_Ecotechsolution.ps1)\
-[Liste_Employes_Entrant.csv](../Ressources/Scripts/Liste_Employes_Entrant.csv)
+```bash
+apt install -y postgresql-common
+/usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
+```
 
-### Plusieurs collaborateurs ont quitté la société à la fin du mois dernier. Traiter leurs comptes AD ainsi que leurs données associées (s'il y en a).
-#### Désactivation des comptes AD.
-- Pour la désactivation des employés sortant nous avons d'abord créer un OU `Ecotech_A_Supprimer`, pour centraliser les utilisateurs.
-- Pour traiter la désactivation et le déplacement dans cette OU nous passons par un script et un fichier csv. \
-[USER_Désactivation_Ecotechsolution.ps1](../Ressources/Scripts/USER_Desactivation_Ecotechsolution.ps1)\
-[Liste_Employes_Sortant.csv](../Ressources/Scripts/Liste_Employes_Sortant.csv)
-- Vous Pouvez voire que les utilisateurs sont intégrés à l'OU "Ecotech_A_Supprimer", avec en description la date de désactivation.\
-![Image](../Ressources/Images/AD/User_Désactivation.png)
-- l'OU `Ecotech_A_Supprimer` sera vidée une fois par mois via un script(en cours de réalisation), les dossiers personnels seront aussi supprimés.
+Ensuite, nous installons PostgreSQL, ici dans sa version actuellement prise en charge, la version 17.
 
-### Des collaborateurs se sont marié. Traiter correctement leur nouveau nom.
+```bash
+apt -y install postgresql-17
+```
 
-- Cette partie là a été traitée manuellement.\
-#### Renommer compte utilisateur.
--Sélectioner l'utilisateur et faire clic droit, puis `Rename`.\
-![Image](../Ressources/Images/AD/Rename_User1.png)
-- Renommer l'utilisateur. \
-![Image](../Ressources/Images/AD/Rename_User2.png)
-- Remplire les champs suivant la politique de l'AD.\
-![Image](../Ressources/Images/AD/Rename_User3.png)
+Lancer PostgreSQL et configurer son démarrage automatique au démarrage du système :
 
-### Gestion hiérarchique.
+```bash
+systemctl enable postgresql --now
+```
 
-- Pour la gestion hiérarchique , nous avons utilisé un script avec un fichier CSV.\
-[USER_Mise_a_jour_des_comptes_utilisateurs_automatique.ps1](../Ressources/Scripts/USER_Mise_a_jour_des_comptes_utilisateur_automatique.ps1)\
-[Utilisateurs2.csv](../Ressources/Scripts/Utilisateurs2.csv)
+# Installation du Serveur Zabbix et de ses Composants
 
-## FAQ
+La base de données étant maintenant installée, nous pouvons procéder à l'installation du serveur Zabbix et de tous ses composants.
 
--J'ai eu un soucis avec un nom d'utilisateur `Le Floch'`, qui m'a posé un problème sur le `SamAccountName`lors de l'exécution de mon script de mise à jour des comptes utilisateurs, il m'indiquait une erreur disant qu'il ne trouvait pas le SamAccountName, j'ai essayé de modifier mon script de création de nouveau utilisateur en enlevant les caractères spéciaux dans le SamAccountName et là je me suis aperçu que les premiers utilisateurs créé sur l'ad ne prennait pas en charge ce critère  et n'étais pas reconnu par mon script "mis à jour des comptes utilisateurs", du coup j'ai décidé de modifier mon fichier CSV pour retirer le "'" de  "Le Floch'", lors de la création de cette utilisateur, car c'était le seul cas que j'avais.
+Ajoutons les dépôts Zabbix et vidons le cache d'installation.
+
+```bash
+wget https://repo.zabbix.com/zabbix/7.2/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.2+debian12_all.deb
+dpkg -i zabbix-release_latest_7.2+debian12_all.deb
+apt update
+```
+
+Nous installons tous les composants nécessaires de Zabbix.
+
+Dans ce cas, nous utiliserons Zabbix Agent 2 comme agent principal de supervision, recommandé pour ses nombreuses fonctionnalités supplémentaires.
+
+```bash
+apt install zabbix-server-pgsql zabbix-frontend-php php8.2-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent2 zabbix-web-service
+```
+
+# Initialisation de la Base de Données
+
+Commencez par créer un utilisateur de base de données pour Zabbix. Pendant le processus, un mot de passe d'accès sera demandé. Ensuite, créez une base de données vide et attribuez les autorisations nécessaires.
+
+```bash
+sudo -u postgres createuser --pwprompt zabbix
+sudo -u postgres createdb -O zabbix zabbix
+```
+
+À ce stade, nous pouvons importer le schéma et les données par défaut. Le mot de passe saisi précédemment sera de nouveau demandé.
+
+```bash
+zcat /usr/share/zabbix/sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+```
+
+# Installation de TimescaleDB
+
+Procédons à l'installation de TimescaleDB en ajoutant d'abord son dépôt officiel.
+
+```bash
+curl -s https://packagecloud.io/install/repositories/timescale/timescaledb/script.deb.sh | sudo bash
+```
+
+Installez TimescaleDB :
+
+```bash
+apt install timescaledb-2-postgresql-17 timescaledb-2-loader-postgresql-17
+```
+
+Exécutez l'utilitaire `timescaledb-tune`, en définissant une valeur plus élevée pour le nombre maximum de connexions (`--max-conns`), ici 125 pour des tests. 
+
+Cet utilitaire ajuste les paramètres par défaut de PostgreSQL pour optimiser les performances et configure correctement les paramètres de PostgreSQL afin de fonctionner avec TimescaleDB.
+
+De plus, l’utilitaire nous aidera à sélectionner le fichier de configuration PostgreSQL actuel et valide, et configurera automatiquement le chargement des bibliothèques TimescaleDB.
+
+Veuillez répondre **"oui"** (`y`) à toutes les questions. Notez que le tuner automatique suppose que PostgreSQL fonctionne sur un serveur dédié, donc certains paramètres peuvent nécessiter des ajustements.
+
+
+```bash
+timescaledb-tune --pg-config /usr/bin --max-conns=125
+```
+
+Redémarrez ensuite le service PostgreSQL :
+
+```bash
+systemctl restart postgresql
+```
+
+Créez et activez TimescaleDB :
+
+```bash
+echo "CREATE EXTENSION IF NOT EXISTS timescaledb CASCADE;" | sudo -u postgres psql zabbix
+cat /usr/share/zabbix/sql-scripts/postgresql/timescaledb/schema.sql | sudo -u zabbix psql zabbix
+```
+
+# Configuration du Serveur Zabbix
+
+Ouvrez le fichier de configuration du serveur Zabbix situé à :
+
+```bash
+nano /etc/zabbix/zabbix_server.conf
+```
+
+Modifiez les paramètres suivants comme indiqué ci-dessous :
+
+```bash
+...
+DBPassword=motdepasse
+StartReportWriters=1
+WebServiceURL=http://localhost:10053/report
+...
+```
+
+Configurez les packages linguistiques pour l'interface de Zabbix :
+
+```bash
+sed -i '/# fr_FR.UTF-8 UTF-8/s/^# //' /etc/locale.gen
+sed -i '/# en_US.UTF-8 UTF-8/s/^# //' /etc/locale.gen
+locale-gen
+```
+
+Redémarrez les services liés et configurez-les pour un démarrage automatique :
+
+```bash
+systemctl restart zabbix-server zabbix-web-service zabbix-agent2 apache2
+systemctl enable zabbix-server zabbix-web-service zabbix-agent2 apache2
+```
+
+# Configuration de l'Interface de Zabbix
+
+Dans votre navigateur, accédez à l'URL cible où Zabbix est en cours d'exécution, par exemple `http://192.168.0.50/zabbix`. Suivez l'assistant d'installation initiale pour configurer les paramètres requis, tels que la connexion à la base de données et les informations de base sur le serveur.
+
+Connectez-vous ensuite avec les identifiants par défaut (**Admin/zabbix**) pour accéder au tableau de bord initial.
+
+ Après avoir sélectionné la langue par défaut, cliquez sur **Étape suivante** pour accéder à la page de vérification des prérequis minimaux.
+
+![](https://www.initmax.com/wp-content/uploads/2024/12/zabbix72install1.png)
+
+Si la vérification est réussie, cliquez sur **Étape suivante** pour accéder à la page des paramètres de connexion à la base de données.
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-2.png)
+
+Ici, remplissez uniquement le champ **Mot de passe** pour accéder à la base de données ; aucune autre modification n'est nécessaire.
+
+Après avoir saisi le mot de passe, cliquez de nouveau sur **Étape suivante**.
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-3.png)
+
+Sur la page suivante, dédiée aux paramètres de base, renseignez le nom du serveur et le fuseau horaire, puis cliquez sur **Étape suivante** pour accéder au résumé de la configuration.
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-4.png)
+
+Dans ce résumé, examinez toutes les valeurs saisies, puis cliquez sur **Étape suivante** pour terminer l'installation.
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-5.png)
+
+Enfin, cliquez sur le bouton **Terminer** pour accéder à l'écran de connexion.
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-6.png)
+
+Après vous être connecté avec les identifiants précédemment configurés, vous pouvez commencer à utiliser la dernière version de Zabbix 7.2 (**Admin/zabbix**).
+
+![](https://www.initmax.com/wp-content/uploads/2023/10/zabbix70-7.png)
+
+Voici à quoi ressemble le tableau de bord initial de la nouvelle version de Zabbix 7.2 :
+
+![](https://www.initmax.com/wp-content/uploads/2024/12/zabbix72dashboard.png)
+
+
