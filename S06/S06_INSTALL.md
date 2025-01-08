@@ -215,4 +215,33 @@ Pour appliquer vos paramètres, redémarrez le Zabbix-agent2 avec la commande su
 ```bash
 systemctl restart zabbix-agent2
 ```
+---
 
+# Installation de Zabbix-Agent sur Windows
+
+## Récupération des sources d'installation
+
+Pour télécharger le fichier d'installation .msi de l'agent suivre ce lien : [Agent 2](https://cdn.zabbix.com/zabbix/binaries/stable/7.2/7.2.2/zabbix_agent2-7.2.2-windows-amd64-openssl.msi)
+
+## Installation de Zabbix Agent 2
+
+Lancer l'installation, accepter les CGU, laisser tous les composants enfichables.
+
+## Configuration du service 
+
+Lorsque vous arrivez sur la fenêtre ci-dessous, indiquer le Hostname du serveur sur lequel vous êtes (souvent remplis par défaut).
+
+- Saisir l'IP du server ZABBIX.
+- Laisser le port par défaut.
+- Saisir l'IP du server ZABBIX.
+- Cocher **Add agent location to the PATH**
+
+![](../Ressources/Images/ZABBIX/ZABBIX_1.png)
+
+Terminer ensuite l'installation. 
+
+## Vérification du service
+
+Afin de s'assurer que l'installation s'est correctement effectuée et que le service est bien lancé aller regardez dans les services Windows si il est bien lancé. 
+
+![](../Ressources/Images/ZABBIX/ZABBIX_2.png)
