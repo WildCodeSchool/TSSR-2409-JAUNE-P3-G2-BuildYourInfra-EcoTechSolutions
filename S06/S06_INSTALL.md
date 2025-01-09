@@ -217,7 +217,7 @@ systemctl restart zabbix-agent2
 ```
 ---
 
-# Installation de Zabbix-Agent sur Windows
+# Installation de Zabbix-Agent 2 sur Windows
 
 ## Récupération des sources d'installation
 
@@ -245,3 +245,28 @@ Terminer ensuite l'installation.
 Afin de s'assurer que l'installation s'est correctement effectuée et que le service est bien lancé aller regardez dans les services Windows si il est bien lancé. 
 
 ![](../Ressources/Images/ZABBIX/ZABBIX_2.png)
+
+---
+
+# Installation de Zabbix-Agent 2 sur Windows Core
+
+## installation et configuration en PowwerShell
+
+Après avoir récupérer les sources d'installation `.msi` exécuter la commande PowerShell suivante afin de lancer l'installation sur le serveur Windows Core.
+
+```powershell
+Start-Process -FilePath "msiexec.exe" -ArgumentList '/i "C:\users\administrator\downloads\zabbix_agent2-7.2.2-windows-amd64-openssl.msi" /quiet /norestart SERVER="<IP DU SERVEUR ZABBIX>" SERVERACTIVE="<IP DU SERVEUR ZABBIX>" HOSTNAME="<HOSTNAME DU SERVEUR CORE>"' -Wait
+```
+
+## Vérifier l’installation
+
+Vérifiez que le service Zabbix Agent 2 est installé et fonctionne 
+
+```Powershell
+Get-Service -Name "Zabbix Agent 2"
+```
+
+Si le service n’est pas démarré 
+```powershell
+Start-Service -Name "Zabbix Agent 2"
+```
