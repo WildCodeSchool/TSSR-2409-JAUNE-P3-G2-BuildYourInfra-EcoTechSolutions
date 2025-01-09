@@ -1,5 +1,4 @@
-# SPRINT 6 INSTALL
-
+# SPRINT 6 INSTALLATION DE ZABBIX
 
 # Installation des Dépendances
 
