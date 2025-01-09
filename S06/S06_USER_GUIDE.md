@@ -50,6 +50,7 @@
 ![Image](../Ressources/Images/AD/Rename_User2.png)
 - Remplire les champs suivant la politique de l'AD.\
 ![Image](../Ressources/Images/AD/Rename_User3.png)
+- **Attention! ne pas modifier les champs `User logon name`** 
 
 ### Gestion hiérarchique.
 
