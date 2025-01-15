@@ -209,6 +209,7 @@ sudo apt update && sudo apt upgrade -y
 ### 2. Installer les paquets nécessaires
 
 ```bash
+sudo apt -y install realmd libnss-sss libpam-sss sssd sssd-tools adcli samba-common-bin oddjob oddjob-mkhomedir packagekit
 sudo apt install -y realmd sssd sssd-tools adcli samba-common krb5-user packagekit
 ```
 
