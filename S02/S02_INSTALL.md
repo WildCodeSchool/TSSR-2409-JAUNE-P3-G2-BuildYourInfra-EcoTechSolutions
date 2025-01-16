@@ -82,7 +82,7 @@
 4. **Tester la résolution DNS locale :**
    - Effectuez une requête DNS sur le serveur pour vérifier que le DNS fonctionne :
      ```bash
-       nslookup EcotechSolutions.lan
+       nslookup Ecotechsolutions.lan
      ```
      - Le serveur DNS local (`127.0.0.1`) doit répondre avec l’adresse IP du serveur AD.
    - Vérifiez également un nom d’hôte externe :
@@ -162,7 +162,7 @@
 
 #### Étape 3 : Test du DNS
 1. Utilisez **nslookup** pour tester les enregistrements :
-   - Ouvrez une invite de commande et tapez : `nslookup EcotechSolutions.lan`.
+   - Ouvrez une invite de commande et tapez : `nslookup Ecotechsolutions.lan`.
    - Vérifiez que le serveur DNS répond correctement.
 
 ---
@@ -220,20 +220,20 @@ Lors de l'installation de `krb5-user`, il vous sera demandé de configurer le do
 Vérifiez que le domaine est accessible :
 
 ```bash
-realm discover ecotechSolutions.lan
+realm discover ecotechsolutions.lan
 ```
 
-Remplacez `ecotechSolutions.lan` par le nom de votre domaine. Vous devriez voir des informations sur le domaine si tout est correctement configuré.
+Remplacez `ecotechsolutions.lan` par le nom de votre domaine. Vous devriez voir des informations sur le domaine si tout est correctement configuré.
 
 ### 4. Joindre la machine au domaine
 
 Pour joindre la machine au domaine :
 
 ```bash
-sudo realm join --user=admin@ecotechSolutions.lan ecotechSolutions.lan
+sudo realm join --user=admin@ecotechsolutions.lan 
 ```
 
-Remplacez `admin@ecotechSolutions.lan` par un compte utilisateur ayant les droits nécessaires pour ajouter une machine au domaine. Vous serez invité à entrer le mot de passe de cet utilisateur.
+Remplacez `admin@ecotechsolutions.lan` par un compte utilisateur ayant les droits nécessaires pour ajouter une machine au domaine. Vous serez invité à entrer le mot de passe de cet utilisateur.
 
 ### 5. Vérifier l'intégration
 
@@ -256,12 +256,12 @@ Configuration :
 
 ```
 [sssd]
-domains = ecotechSolutions.lan
+domains = ecotechsolutions.lan
 config_file_version = 2
 services = nss, pam
 
-[domain/ecotechSolutions.lan]
-ad_domain = ecotechSolutions.lan
+[domain/ecotechsolutions.lan]
+ad_domain = ecotechsolutions.lan
 krb5_realm = ECOTECHSOLUTIONS.LAN
 realmd_tags = manages-system joined-with-samba
 id_provider = ad
@@ -288,10 +288,10 @@ sudo systemctl restart sssd
 Essayez de vous connecter avec un utilisateur du domaine :
 
 ```bash
-su - username@ecotechSolutions.lan
+su - username@ecotechsolutions.lan
 ```
 
-Remplacez `username@ecotechSolutions.lan` par le compte d'un utilisateur du domaine. Si tout est configuré correctement, l'utilisateur devrait être en mesure de se connecter.
+Remplacez `username@ecotechsolutions.lan` par le compte d'un utilisateur du domaine. Si tout est configuré correctement, l'utilisateur devrait être en mesure de se connecter.
 
 
 # Configuration de Windows Server Core 2022 en tant que contrôleur de domaine secondaire
@@ -318,9 +318,9 @@ Joignez le serveur au domaine Active Directory :
 
 1. Exécutez la commande suivante :
    ```cmd
-   Add-Computer -DomainName ecotechSolutions.lan -Credential ecotechSolutions\\admin
+   Add-Computer -DomainName ecotechsolutions.lan -Credential ecotechSolutions\\admin
    ```
-   Remplacez `ecotechSolutions\\admin` par un compte utilisateur avec des droits suffisants.
+   Remplacez `ecotechsolutions\\admin` par un compte utilisateur avec des droits suffisants.
 
 2. Redémarrez le serveur après avoir joint le domaine :
    ```cmd
@@ -341,7 +341,7 @@ Configurez le serveur pour qu'il devienne un contrôleur de domaine secondaire :
 
 1. Exécutez la commande suivante :
    ```powershell
-   Install-ADDSDomainController -DomainName "ecotechSolutions.lan" -InstallDns -Credential (Get-Credential)
+   Install-ADDSDomainController -DomainName "ecotechsolutions.lan" -InstallDns -Credential (Get-Credential)
    ```
 2. Fournissez les informations d'identification d'un utilisateur ayant des permissions administratives dans Active Directory.
 
