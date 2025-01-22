@@ -343,7 +343,7 @@ Configurez le serveur pour qu'il devienne un contrôleur de domaine secondaire :
    ```powershell
    Install-ADDSDomainController -DomainName "ecotechsolutions.lan" -InstallDns -Credential (Get-Credential)
    ```
-2. Fournissez les informations d'identification d'un utilisateur ayant des permissions administratives dans Active Directory.
+2. Fournissez les informations d'identification d'un utilisateur(`ecotechsolutions.lan\Administrator + MDP`) ayant des permissions administratives dans Active Directory.
 
 3. Le serveur sera automatiquement redémarré après l'installation.
 
