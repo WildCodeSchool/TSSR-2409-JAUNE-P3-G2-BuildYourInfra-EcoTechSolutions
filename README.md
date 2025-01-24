@@ -46,12 +46,12 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
 - Product Owner : Marilyn
 - Scrum Master : Damien
 - Développeur : Arnaud
-  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S6.png)
+   ![Objectifs](Ressources/Images/Objectifs/Objectifs_S6.png)
 ## Sprint 7
 - Product Owner : Damien
 - Scrum Master : Arnaud
 - Développeuse : Marilyn
-  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S7.png)
+   ![Objectifs](Ressources/Images/Objectifs/Objectifs_S7.png)
 
 ## Sprint 8
 - Product Owner : Marilyn
