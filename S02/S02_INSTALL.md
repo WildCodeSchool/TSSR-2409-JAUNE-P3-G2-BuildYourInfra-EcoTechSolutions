@@ -230,7 +230,7 @@ Remplacez `ecotechsolutions.lan` par le nom de votre domaine. Vous devriez voir 
 Pour joindre la machine au domaine :
 
 ```bash
-sudo realm join --user=admin@ecotechsolutions.lan 
+sudo realm join --user=Administrator ecotechsolutions.lan 
 ```
 
 Remplacez `admin@ecotechsolutions.lan` par un compte utilisateur ayant les droits nécessaires pour ajouter une machine au domaine. Vous serez invité à entrer le mot de passe de cet utilisateur.
