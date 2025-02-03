@@ -1,6 +1,6 @@
 # SPRINT 8 INSTALL
 
-## Installation d'un serveur de mise à jour WSUS sur une VM Windows Server 2022
+## 🚀Installation d'un serveur de mise à jour WSUS sur une VM Windows Server 2022
 
 ## I. Installation du rôle WSUS
 
