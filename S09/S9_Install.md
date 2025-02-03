@@ -1,3 +1,4 @@
+# SPRINT 9 INSTALL
 ## 🚀 Installation de FreePBX sur Debian 12 dans Proxmox avec 3CX sur Windows 10
 
 ### **1. Création d’une VM Debian 12 sur Proxmox**
