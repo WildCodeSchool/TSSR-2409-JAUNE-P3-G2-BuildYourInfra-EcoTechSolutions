@@ -53,7 +53,7 @@
 
 ---
 
-### **3. Installation du client 3CX sur Windows 10**
+### 🚀**3. Installation du client 3CX sur Windows 10**
 1. **Télécharger le client 3CX** depuis [https://www.3cx.com/](https://www.3cx.com/).
 2. **Lancer l’installation** et suivre l’assistant.
 3. **Configurer un compte SIP FreePBX** :
@@ -64,7 +64,7 @@
 
 ---
 
-## 1. Créer des extensions SIP dans FreePBX
+## 🚀1. Créer des extensions SIP dans FreePBX
 
 ### 1.1. Créer l'extension pour Client 1 (Extension 1001)
 
