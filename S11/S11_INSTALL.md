@@ -17,7 +17,7 @@ Une fois le système mis à jour, nous allons installer Snort, pour cela tapez l
 Vous allez arriver sur l’assistant de configuration de **Snort**, faites « Entrer » sur la fenêtre de présentation. Vous devez ensuite renseigner la plage IP de votre réseau au format CIDR:
 
 
-![image](snort_1.png)
+![Image](../Ressources/Images/Snort/Snort_4.png)
  
 
 L’outil va vous demander une seconde fois l’interface à écouter, renseignez ce champ à nouveau. Patientez quelques secondes pour que l’installation se termine.
@@ -50,7 +50,7 @@ Nous allons vérifier que notre alerte fonctionne bien. Lancez l’outil **Snort
 Lancez un ping a partir de n’importe quelle machine de votre réseau, comme expliqué précédemment Snort est un sniffer réseau, il va aspirer l’ensemble du trafic de votre réseau. Vous devriez voir l’alerte que nous venons de créer apparaître:
 
 
-![image](snort_2.png)
+![Image](../Ressources/Images/Snort/Snort_2.png)
  
 
 Appuyez sur Ctrl + C pour stopper **Snort**. L’ensemble des alertes/logs de l’outil sont stockés dans /var/log/snort. Pour accéder à un fichier de log, exécutez la commande suivante:
@@ -123,4 +123,4 @@ Vérifiez le statut du service:
 
 `sudo systemctl status snort`
 
-![image](snort_3.png)
+![Image](../Ressources/Images/Snort/Snort_3.png)
