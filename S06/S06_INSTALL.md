@@ -137,3 +137,121 @@ systemctl restart zabbix-server zabbix-web-service zabbix-agent2 apache2
 systemctl enable zabbix-server zabbix-web-service zabbix-agent2 apache2
 ```
 
+---
+
+# Installation de Graylog sur un conteneur LXC sous Proxmox
+
+## Prérequis
+
+- Un serveur Proxmox avec accès administrateur.
+- Une image Debian 12 pour LXC.
+- Un accès internet pour récupérer les paquets nécessaires.
+- Un conteneur LXC avec les paramètres suivants :
+  - **Nom du conteneur** : `HURLUBERLU`
+  - **Propriétaire** : Groupe 2 (EcotechSolutions)
+  - **OS** : Debian 12
+  - **Login** : `root` ou `wilder`
+  - **Mot de passe** : `Azerty1*`
+  - **Adresse IP** : `10.10.255.7/24` (interface `vmbr555`)
+
+## Création du Conteneur LXC
+
+### Étape 1 : Création du conteneur
+
+1. Se connecter à l'interface web de Proxmox.
+2. Aller dans `Datacenter` → `Nœud Proxmox` → `CT`.
+3. Cliquer sur `Créer CT` et remplir les champs :
+   - **Nom du conteneur** : `HURLUBERLU`
+   - **Mot de passe** : `Azerty1*`
+   - **Système d'exploitation** : Debian 12 (choisir un template téléchargé)
+   - **Réseau** : IP statique `10.10.255.7/24`, passerelle selon votre configuration
+4. Valider et démarrer le conteneur.
+
+## Installation de Graylog
+
+### Étape 2 : Connexion au conteneur
+
+```bash
+ssh root@10.10.255.7
+```
+Mot de passe : `Azerty1*`
+
+### Étape 3 : Mise à jour et installation des prérequis
+
+```bash
+apt update && apt upgrade -y
+apt install -y apt-transport-https openjdk-11-jre-headless uuid-runtime pwgen gnupg wget curl
+```
+
+### Étape 4 : Installation de MongoDB
+
+```bash
+wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | gpg --dearmor | tee /usr/share/keyrings/mongodb-server-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/mongodb-server-keyring.gpg] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/6.0 main" | tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+
+apt update
+apt install -y mongodb-org
+systemctl enable --now mongod
+```
+
+### Étape 5 : Installation d’Elasticsearch
+
+```bash
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | gpg --dearmor | tee /usr/share/keyrings/elasticsearch-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/7.x/apt stable main" | tee /etc/apt/sources.list.d/elasticsearch-7.x.list
+
+apt update
+apt install -y elasticsearch
+```
+
+Configurer Elasticsearch (`/etc/elasticsearch/elasticsearch.yml`) :
+
+```bash
+echo "cluster.name: graylog" >> /etc/elasticsearch/elasticsearch.yml
+echo "action.auto_create_index: false" >> /etc/elasticsearch/elasticsearch.yml
+```
+
+Redémarrer Elasticsearch :
+
+```bash
+systemctl enable --now elasticsearch
+```
+
+### Étape 6 : Installation de Graylog
+
+```bash
+wget -qO - https://packages.graylog2.org/repo/debian/keyring.gpg | gpg --dearmor | tee /usr/share/keyrings/graylog-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/graylog-keyring.gpg] https://packages.graylog2.org/repo/debian/ stable 4.3" | tee /etc/apt/sources.list.d/graylog.list
+
+apt update
+apt install -y graylog-server
+```
+
+Configurer Graylog (`/etc/graylog/server/server.conf`) :
+
+```bash
+sed -i "s/password_secret =.*/password_secret = $(pwgen -N 1 -s 96)/" /etc/graylog/server/server.conf
+sed -i "s/root_password_sha2 =.*/root_password_sha2 = $(echo -n 'PuitsDeLogs@' | sha256sum | awk '{print $1}')/" /etc/graylog/server/server.conf
+sed -i "s/http_bind_address = 127.0.0.1:9000/http_bind_address = 10.10.255.7:9000/" /etc/graylog/server/server.conf
+```
+
+Redémarrer Graylog :
+
+```bash
+systemctl enable --now graylog-server
+```
+
+## Accès à Graylog
+
+Une fois l’installation terminée, accéder à l’interface web :
+
+```
+http://10.10.255.7:9000
+```
+
+- **Login** : `admin`
+- **Mot de passe** : `PuitsDeLogs@`
+
