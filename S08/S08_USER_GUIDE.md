@@ -60,3 +60,79 @@ Voilà, l'opération est terminée ! Pour quitter correctement le programme NTDS
 
 Enfin, vous pouvez vérifier si les rôles sont bien transférés grâce à la commande suivante sur PowerShell :`NETDOM QUERY /Domain:ecotechsolutions.lan FSMO`\
  ![Image](../Ressources/Images/FSMO/FSMO_14.png)
+
+
+
+ # 📘 Guide Utilisateur WSUS (Windows Server Update Services)
+
+## 🔹 Introduction
+WSUS (Windows Server Update Services) est une solution Microsoft permettant de centraliser, gérer et distribuer les mises à jour Windows sur un réseau d’entreprise.
+
+🔗 **Documentation officielle** : [WSUS Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)  
+
+---
+
+## ✅ **1. Gestion des Mises à Jour**
+### 🔄 Synchronisation des mises à jour
+- Accéder à **WSUS Console > Options > Source et synchronisation des mises à jour**.
+- Lancer une **synchronisation manuelle** ou planifier des synchronisations automatiques.
+- Vérifier l’état des mises à jour dans **Mises à jour > Toutes les mises à jour**.
+
+### 📌 Approuver les mises à jour
+1. Aller dans **WSUS Console > Mises à jour > Toutes les mises à jour**.
+2. Filtrer par **État** (*Non approuvé, Approuvé, En attente*).
+3. Sélectionner une ou plusieurs mises à jour.
+4. Cliquer sur **Approuver** et choisir les groupes d’ordinateurs cibles.
+
+### ⏳ Planification des mises à jour
+- Appliquer une **stratégie de groupe (GPO)** pour forcer les clients à récupérer les mises à jour WSUS.
+- Définir un planning de mise à jour dans **Stratégie de groupe > Windows Update**.
+
+---
+
+## 🖥️ **2. Gestion des Ordinateurs Clients**
+### 🖧 Affichage des clients WSUS
+- Aller dans **WSUS Console > Ordinateurs**.
+- Regrouper les ordinateurs selon les stratégies définies (ex. *Postes de travail, Serveurs*).
+
+### 🔍 Vérification de la connexion des clients
+- Sur un poste client, exécuter :  
+  ```powershell
+  wuauclt /detectnow
+  wuauclt /reportnow
+  ```
+- Vérifier l’état de mise à jour dans **WSUS Console > Ordinateurs**.
+
+---
+
+## 📊 **3. Surveillance et Rapports**
+### 📈 Générer un rapport de mises à jour
+1. Aller dans **WSUS Console > Rapports**.
+2. Sélectionner **Résumé des mises à jour** ou **Statut des ordinateurs**.
+3. Générer et exporter en **CSV, PDF**.
+
+### 🚨 Gérer les erreurs et échecs de mises à jour
+- Vérifier les **logs WSUS** dans :  
+  `C:\Program Files\Update Services\LogFiles\`
+- Consulter l’**Observateur d’événements** sur le serveur WSUS (`eventvwr.msc`).
+
+---
+
+## 🔧 **4. Maintenance et Nettoyage**
+### 🗑️ Nettoyage de WSUS
+- Exécuter l’outil **WSUS Cleanup Wizard** pour :
+  - Supprimer les mises à jour obsolètes.
+  - Nettoyer la base de données WSUS.
+
+### 🚀 Optimisation et dépannage
+- Exécuter :  
+  ```powershell
+  wsusutil.exe reset
+  ```
+- Défragmenter la base de données si WSUS devient lent.
+
+---
+
+## 📌 **Ressources utiles**
+📖 [Documentation WSUS](https://docs.microsoft.com/en-us/windows-server/administration/windows-server-update-services/get-started/windows-server-update-services-wsus)  
+📖 [Forum WSUS](https://learn.microsoft.com/en-us/answers/topics/windows-server-update-services.html)
