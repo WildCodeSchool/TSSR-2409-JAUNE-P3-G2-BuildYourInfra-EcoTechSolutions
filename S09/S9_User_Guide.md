@@ -1,8 +1,3 @@
- ## Tester les appels entre les deux clients 3CX
-
-1. Depuis **Client 1**, composez l'extension `1002`.
-2. Depuis **Client 2**, composez l'extension `1001`.
-
 # 📘 Guide Utilisateur FreePBX
 
 FreePBX est une interface web qui permet de gérer un système de téléphonie basé sur **Asterisk**. Ce guide couvre l'utilisation de FreePBX sans installation.
@@ -112,3 +107,7 @@ FreePBX est une interface web qui permet de gérer un système de téléphonie b
 - **Admin > Backup & Restore** pour créer et restaurer des sauvegardes.
 
 ---
+ ## Tester les appels entre les deux clients 3CX
+
+1. Depuis **Client 1**, composez l'extension `1002`.
+2. Depuis **Client 2**, composez l'extension `1001`.
