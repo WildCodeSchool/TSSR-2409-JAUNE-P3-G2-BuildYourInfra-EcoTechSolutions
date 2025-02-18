@@ -75,4 +75,4 @@ Redmine est une plateforme de gestion de projet open-source, permettant le suivi
 
 ## 📌 **Ressources utiles**
 📖 [Guide utilisateur officiel](https://www.redmine.org/projects/redmine/wiki/User_Guide)  
-📖 [Guide administrateur](https://www.redmine.org/projects/redmine/wiki/RedmineAdminGuide)
+
