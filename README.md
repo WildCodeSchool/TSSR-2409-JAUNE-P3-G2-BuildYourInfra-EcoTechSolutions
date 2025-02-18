@@ -91,7 +91,7 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
     * Template : `Windows Server 2022` / Type : `VM`.
     * Configuration IP : `10.10.255.1/24` / Passerelle : `10.10.255.254` / Carte réseau : `vmbr555`.
     * Hard Disk : `1 HDD 32GO` 
-    * Processeur : `3`.
+    * Processeur : `4`.
     * RAM : `8Go`.
     * Fonction : `DHCP` / `DNS` / `ADDS`.
 
