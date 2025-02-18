@@ -148,19 +148,3 @@ session.use_trans_sid = 0
 
 Redémarrer le serveur.
 
-# À partir d'une machine graphique
-
-Sur un navigateur web :
-http://`<Adresse IP du serveur GLPI>`/ecotechsolutions.lan/
-
-Sur la page d'installation :
-- Langue : **Français**
-- Cliquer sur **Installer**
-- Corriger éventuellement les **requis**
-
-Pour le SETUP :
-- Serveur SQL : `127.0.0.1` ou `localhost`
-- Utilisateur : `glpi`
-- Mot de passe : `Azerty1*`
-
-Choisir la base de données créer : `glpidb`
