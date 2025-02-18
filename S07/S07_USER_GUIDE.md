@@ -76,3 +76,21 @@ Redmine est une plateforme de gestion de projet open-source, permettant le suivi
 ## 📌 **Ressources utiles**
 📖 [Guide utilisateur officiel](https://www.redmine.org/projects/redmine/wiki/User_Guide)  
 
+# Guide Utilisateur iRedMail
+Après avoir déployé par **GPO**, l'installation du logiciel **Thunderbird** sur nos postes clients.\
+Nous nous rendons sur le poste client *cdupont*  de notre domaine.
+
+Une fois Thunderbird ouvert, nous procédons aux réglages suivants (de telle sorte à "lier" le serveur mail à notre client mail installé sur le poste; cela permet d'éviter à l'utilisateur de se rendre directement sur le serveur pour consulter ses emails) :
+  
+On se rend dans **Paramètres** > **Paramètres des comptes** > **Paramètres serveur** : ici nous spécifions le nom DNS de notre serveur mail (conteneur IVROGNE),*ivrogne.ecotechsolutions.lan* qui écoute sur le port 143 (IMAP non sécurisé).Nous validons :
+
+![Image](../Ressources/Images/Iredmail/iredmail_27.png)
+  
+Ce qui génère un redémarrage de l'application pour tenir compte des modifications. Nous entrons le mot de passe de l'utilisateur en question :
+
+![Image](../Ressources/Images/Iredmail/iredmail_28.png)
+  
+Nous avons connecté le client au serveur mail !
+
+![Image](../Ressources/Images/Iredmail/iredmail_29.png)
+
