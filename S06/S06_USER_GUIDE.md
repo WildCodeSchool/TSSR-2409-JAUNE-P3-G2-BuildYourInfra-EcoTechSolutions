@@ -196,3 +196,81 @@ Si le service n’est pas démarré
 ```powershell
 Start-Service -Name "Zabbix Agent 2"
 ```
+# 📘 Guide Utilisateur Graylog
+
+**Graylog** est une plateforme open-source de gestion et d’analyse de logs centralisés. Il permet de collecter, indexer et analyser les journaux système en temps réel.
+
+🔗 **Documentation officielle** : [Graylog Docs](https://docs.graylog.org/)
+
+---
+
+## 🔹 1. Présentation de Graylog
+Graylog est un **SIEM (Security Information and Event Management)** qui permet :
+- La **collecte centralisée** des logs provenant de différentes sources.
+- La **recherche et analyse avancée** grâce à Elasticsearch.
+- La **création de tableaux de bord et d’alertes**.
+- Une **meilleure visibilité sur la sécurité et les performances** des systèmes.
+
+📌 **Principaux composants** :
+- **Graylog Server** : Traite et stocke les logs.
+- **Elasticsearch** : Indexe et recherche les logs.
+- **MongoDB** : Stocke la configuration et les métadonnées.
+
+---
+
+## 📥 2. Collecte des Logs
+### 🔗 Sources supportées
+- Journaux système (syslog, Windows Event Log).
+- Journaux d’applications (Apache, Nginx, MySQL, etc.).
+- Données issues d'outils de sécurité (firewalls, IDS/IPS).
+
+### ⚙️ Ajouter un **Input** pour collecter des logs
+1. **Accédez à** : *System > Inputs*.
+2. **Sélectionnez un type de log** (ex. : Syslog UDP, GELF, HTTP, etc.).
+3. **Cliquez sur "Launch new input"**.
+4. **Configurez l’input** : port, format, permissions.
+5. **Démarrez l’input** et vérifiez les données entrantes.
+
+---
+
+## 🔍 3. Recherche et Analyse des Logs
+### 🕵️ Recherche avancée
+1. Allez dans **Search**.
+2. Utilisez des **requêtes Lucene** pour filtrer les logs.
+3. Exemple :
+   ```
+   source:server1 AND level:ERROR
+   ```
+4. Ajoutez des **filtres temporels** pour affiner les résultats.
+5. Sauvegardez les recherches fréquentes.
+
+### 📊 Création de tableaux de bord
+1. Accédez à **Dashboards**.
+2. Créez un **nouveau tableau de bord**.
+3. Ajoutez des **widgets** (graphiques, compteurs, statistiques).
+4. Personnalisez l’affichage selon vos besoins.
+
+---
+
+## 🚨 4. Configuration des Alertes
+1. Allez dans **Alerts & Events**.
+2. Créez une **nouvelle condition d’alerte** (ex. : échec de connexion anormal).
+3. Définissez un **seuil** (ex. : plus de 5 erreurs en 1 minute).
+4. Associez une **notification** (email, webhook, Slack).
+5. Testez et activez l’alerte.
+
+---
+
+## 🔧 5. Maintenance et Sécurité
+### 📌 Bonnes pratiques
+- **Indexer régulièrement** les logs pour optimiser les performances.
+- **Configurer la rétention des données** pour éviter la surcharge du stockage.
+- **Restreindre l’accès aux logs sensibles** avec des permissions utilisateurs.
+- **Surveiller l’activité** via des dashboards et alertes automatisées.
+
+### 🔄 Mise à jour de Graylog
+1. **Vérifiez la version actuelle** via *System > Overview*.
+2. **Téléchargez la mise à jour** depuis [Graylog Downloads](https://graylog.org/downloads/).
+3. **Appliquez les mises à jour** en respectant les prérequis (MongoDB, Elasticsearch).
+
+---
