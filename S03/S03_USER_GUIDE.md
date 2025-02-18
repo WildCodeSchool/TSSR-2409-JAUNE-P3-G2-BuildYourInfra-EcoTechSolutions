@@ -63,3 +63,22 @@
 2. Redémarrez l'ordinateur.
 3. Vérifiez que l'agent GLPI est installé en consultant la liste des programmes installés ou en recherchant le service **"GLPI Agent"**.
 4. Assurez-vous que l'ordinateur apparaît dans l'inventaire de votre serveur GLPI.
+
+
+
+# À partir d'une machine graphique connexion à GLPI
+
+Sur un navigateur web :
+http://`<Adresse IP du serveur GLPI>`/ecotechsolutions.lan/
+
+Sur la page d'installation :
+- Langue : **Français**
+- Cliquer sur **Installer**
+- Corriger éventuellement les **requis**
+
+Pour le SETUP :
+- Serveur SQL : `127.0.0.1` ou `localhost`
+- Utilisateur : `glpi`
+- Mot de passe : `Azerty1*`
+
+Choisir la base de données créer : `glpidb`
