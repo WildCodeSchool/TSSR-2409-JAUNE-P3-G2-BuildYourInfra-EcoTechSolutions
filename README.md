@@ -60,18 +60,29 @@ Ce projet a été réalisé à trois, Damien, Arnaud et Marilyn, dans un laborat
    ![Objectifs](Ressources/Images/Objectifs/Objectifs_S8.png.png)
 
 ## Sprint 9
-- Product Owner : Marilyn
-- Scrum Master : Damien
-- Technicien : Arnaud
+- Product Owner : Arnaud
+- Scrum Master : Marilyn
+- Développeur : Damien
   ![Objectifs](Ressources/Images/Objectifs/Objectifs_S9.png.png)
 
  ## Sprint 10
- - Technicien : Damien
- - Technicien : Arnaud
- - Technicienne : Marilyn
-  
+ - Product Owner : Damien
+ - Scrum Master : Arnaud
+ - Développeuse : Marilyn
+  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S10.png.png)
 
-  
+ ## Sprint 11
+ - Product Owner : Marilyn
+ - Scrum Master : Damien
+ - Développeur : Arnaud
+  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S11.png) 
+
+## Sprint 12
+ - Product Owner : Arnaud
+ - Scrum Master : Marilyn
+ - Développeur : Damien
+  ![Objectifs](Ressources/Images/Objectifs/Objectifs_S12.png)
+
  # IV. Choix techniques
 
  # V. Difficultés / Solutions
