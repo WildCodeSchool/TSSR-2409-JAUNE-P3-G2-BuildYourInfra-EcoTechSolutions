@@ -138,23 +138,6 @@ Notre contact a bien reçu le mail test que nous avons envoyé.
 
 La création et la configuration de l'adresse mail est operationelle.
 
-Après avoir déployé par **GPO**, l'installation du logiciel **Thunderbird** sur nos postes clients.\
-Nous nous rendons sur le poste client *cdupont*  de notre domaine.
-
-Une fois Thunderbird ouvert, nous procédons aux réglages suivants (de telle sorte à "lier" le serveur mail à notre client mail installé sur le poste; cela permet d'éviter à l'utilisateur de se rendre directement sur le serveur pour consulter ses emails) :
-  
-On se rend dans **Paramètres** > **Paramètres des comptes** > **Paramètres serveur** : ici nous spécifions le nom DNS de notre serveur mail (conteneur IVROGNE),*ivrogne.ecotechsolutions.lan* qui écoute sur le port 143 (IMAP non sécurisé).Nous validons :
-
-![Image](../Ressources/Images/Iredmail/iredmail_27.png)
-  
-Ce qui génère un redémarrage de l'application pour tenir compte des modifications. Nous entrons le mot de passe de l'utilisateur en question :
-
-![Image](../Ressources/Images/Iredmail/iredmail_28.png)
-  
-Nous avons connecté le client au serveur mail !
-
-![Image](../Ressources/Images/Iredmail/iredmail_29.png)
-
 ---
 
 # Installation serveur Passbolt
