@@ -9,3 +9,4 @@
 ##
 ### [-Synthèse Materiel](../S12/S12_Synthese_Materiel.md)
 ### [-Synthèse Documentation](../S12/S12_Synthese_Documentation.md)
+### [📥 Schéma modifiable](../Ressources/fichiers/Schema_final.gns3)
